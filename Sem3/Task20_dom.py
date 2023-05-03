@@ -11,18 +11,32 @@
 # ноутбук
 #     12
 
-some_dict = {1: 'А,В,Е,И,Н,О,Р,С,Т,A,E,I,O,U,L,N,S,T,R',
-             2: 'Д,К,Л,М,П,У,D,G',
-             3: 'Б,Г,Ё,Ь,Я,B,C,M,P',
-             4: 'Й,Ы,F,H,V,W,Y',
-             5: 'Ж,З,Х,Ц,Ч,K',
-             8: 'Ш,Э,Ю,J,X',
-             10: 'Ф,Щ,Ъ,Q,Z'}
-N = input('Введите слово: ')
-s = 0
-i = 0
-for i in N:
-    for key, val in some_dict.items():
-        if i in val:
-            s = s + key
-print(s)
+# some_dict = {1: 'А,В,Е,И,Н,О,Р,С,Т,A,E,I,O,U,L,N,S,T,R',
+#              2: 'Д,К,Л,М,П,У,D,G',
+#              3: 'Б,Г,Ё,Ь,Я,B,C,M,P',
+#              4: 'Й,Ы,F,H,V,W,Y',
+#              5: 'Ж,З,Х,Ц,Ч,K',
+#              8: 'Ш,Э,Ю,J,X',
+#              10: 'Ф,Щ,Ъ,Q,Z'}
+# N = input('Введите слово: ')
+# s = 0
+# i = 0
+# for i in N:
+#     for key, val in some_dict.items():
+#         if i in val:
+#             s = s + key
+# print(s)
+
+dict =  {
+            'A': 1, 'E': 1, 'I': 1, 'O': 1, 'U': 1, 'L': 1, 'N': 1, 'S': 1, 'T': 1, 'R': 1,
+            'D': 2, 'G': 2,
+            'B': 3, 'C': 3, 'M': 3, 'P': 3,
+            'F': 4, 'H': 4, 'V': 4, 'W': 4, 'Y': 4,
+            'K': 5,
+            'J': 8, 'X': 8,
+            'Q': 10, 'Z': 10
+        }
+summ = 0
+for letter in input().upper():
+    summ += dict[letter]
+print(summ)
