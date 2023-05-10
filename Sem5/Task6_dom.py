@@ -4,14 +4,28 @@
 # И сгенерирует ошибку, если на вход пришла невалидная строка. Пояснения:
 # Если символ встречается 1 раз, он остается без изменений;
 # Если символ повторяется более 1 раза, к нему добавляется количество повторений.
-
-some_list = {1: 'A,B,C,D,E,F,G'}
-N = input('Введите: ')
-s = 0
-i = 0
-for i in N:
-    for key, val in some_list.items():
-        if i in val:
-            if val == val:
-                s = s + key
-print(f'A{s}')
+in_str = 'AAAABBBCCXYZDDDDEEEFFFAAAAAABBBBBBBBBBBBBBBBBBBBBBBBBBBB'
+def rle_func(input_string):
+    import string
+    alph = string.ascii_uppercase
+    out_str = str()
+    count = 1
+    for i in range(len(input_string) - 1):
+        if input_string[i] in alph:
+            if input_string[i] == input_string[i+1]:
+                count+=1
+            else:
+                out_str += input_string[i]
+                if count > 1:
+                    out_str += str(count)
+                    count = 1
+        else:
+            return 'error'
+    if input_string[-1] in alph:
+        out_str += input_string[-1]
+        if count > 1:
+            out_str += str(count)
+    else:
+        return 'error'
+    return out_str
+print(rle_func(in_str))
